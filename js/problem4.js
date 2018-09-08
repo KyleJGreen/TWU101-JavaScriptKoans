@@ -27,3 +27,19 @@
 */
 
 // Write your JavaScript here
+function countMoney() {
+    let total = 0;
+    let rsNotes = "";
+
+    for(let i = 0; i < arguments.length; i++) {
+        if (i == arguments.length - 1) {
+            rsNotes = rsNotes + arguments[i].toString()
+        }
+        else {
+            rsNotes = rsNotes + arguments[i].toString() + ", "
+        }
+        total += arguments[i];
+    }
+    changeElementText("#RsNotes", rsNotes);
+    changeElementText("#total", total);
+}

@@ -19,6 +19,19 @@
 
 */
 
+function fight(kiteNumber) {
+    let result = kiteNumber.toString();
+    if (kiteNumber % 3 == 0) {
+        result = "Peche!";
+        if (kiteNumber % 5 == 0) {
+            result = result + " Ipo kaate!";
+        }
+    }
+    else if (kiteNumber % 5 == 0) {
+            result = "Ipo kaate!";
+        }
+    return result;
+}
 
 function changeElementText(element, answer) {
     $(element).text(answer);
@@ -26,9 +39,15 @@ function changeElementText(element, answer) {
 
 function kiteGame(numberOfKites) {
     changeElementText("#numberOfKites", numberOfKites);
-    var answer = "";
+    let answer = "";
+
+    changeElementText("#answer", 100);
 
     // write some code here!
+    for (let i =1; i <= numberOfKites; i++) {
+        answer += fight(i) + " ";
+    }
 
     changeElementText("#answer", answer);
 }
+

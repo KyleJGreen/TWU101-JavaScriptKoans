@@ -34,3 +34,24 @@
  */
 
 // Write your JavaScript here
+function fixText(text) {
+    let correctedText = "";
+    let wordCount = 0;
+
+    for (let i = 0; i < text.length; i++) {
+        if (i == 1) {
+            text[i].slice().reverse().forEach(word => {
+               correctedText += word + " ";
+               wordCount++;
+            });
+        }
+        else {
+            text[i].forEach(word => {
+                correctedText += word + " ";
+                wordCount++;
+            });
+        }
+    }
+    changeElementText("#correctedText", correctedText);
+    changeElementText("#wordCount", wordCount);
+}
